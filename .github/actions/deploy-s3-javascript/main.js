@@ -15,8 +15,11 @@ const s3Uri = `s3://${bucket}`;
 
     core.notice('Hello from my custom javascript action')
 
-    const websiteurl = `https://${bucket}.s3-website-${bucketRegion}.amazonaws.com/index.html`;
+    const websiteurl = `https://${bucket}.s3.${bucketRegion}.amazonaws.com/index.html`;
     core.setOutput('website-url', websiteurl);
+
+    //https://udemy-gh-action.s3.us-west-2.amazonaws.com/index.html
+    //https://udemy-gh-action.s3-website-us-west-2.amazonaws.com/index.html
 }
 
 run();
