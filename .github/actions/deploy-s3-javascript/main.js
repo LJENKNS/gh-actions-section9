@@ -15,7 +15,7 @@ const s3Uri = `s3://${bucket}`;
 
     core.notice('Hello from my custom javascript action')
 
-    const websiteurl = `https://${bucket}.s3-website-${bucketRegion}.amazonaws.com`;
+    const websiteurl = `https://${bucket}.s3-website-${bucketRegion}.amazonaws.com/index.html`;
     core.setOutput('website-url', websiteurl);
 }
 
