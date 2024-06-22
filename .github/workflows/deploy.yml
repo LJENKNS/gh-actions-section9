@@ -64,9 +64,13 @@ jobs:
         run: ls
       - name: Deploy site
         uses: ./.github/actions/deploy-s3-javascript
+        id: deploy
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_SECRET_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         with:
           bucket: udemy-gh-action
           dist-folder: ./dist
+      - name: Output Information
+        run: |
+          echo "Live URL: ${{steps.deploy.outputs.website-url}}"
